@@ -1,4 +1,5 @@
 import styles from '../../CSS/login.module.css';
+import Link from 'next/link';
 
 export default function Login() {
     return (
@@ -12,8 +13,9 @@ export default function Login() {
                     <input type="password" placeholder="Mot de passe" className={styles.input}/>
                     <button type="submit" className={styles.button}>Se connecter</button>
                 </form>
+                <Link href='/auth/signin'>Pas encore de compte ? S'inscrire</Link>
             </div>
-            <img src="/images/logo.png" alt="Login" className={styles.logo} width={1000}/>
+            <img src="/images/logo.png" alt="Login" className={styles.logo}/>
         </main>
     )
 }

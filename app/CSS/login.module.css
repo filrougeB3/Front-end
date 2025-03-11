@@ -8,6 +8,7 @@
 .login{
     display: flex;
     min-width: 100%;
+    justify-content: space-between;
     background-color: #404040;
 }
 
@@ -35,4 +36,8 @@
     align-self: center;
     border-radius: 50rem;
     border: none;
+}
+
+.logo{
+    height: 59rem;
 }
