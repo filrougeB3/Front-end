@@ -17,7 +17,7 @@ export default function Signin() {
                 </form>
                 <Link href='/auth/login'>Déjà un compte ? Se connecter</Link>
             </div>
-            <img src="/images/logo.png" alt="Login" className={styles.logo} />
+            <img src="/images/logo_noledge.png" alt="Login" className={styles.logo} />
         </main>
     )
 }

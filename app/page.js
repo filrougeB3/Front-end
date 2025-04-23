@@ -24,7 +24,7 @@ export default function Home() {
       <div className="content">
         <div className="logo">
           <Image
-            src="/logo_noledge.png"
+            src="/images/titre-noledge.png"
             alt="A ledge"
             width={300}
             height={300}
