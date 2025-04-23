@@ -1,0 +1,43 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 50%;
+}
+
+.login{
+    display: flex;
+    min-width: 100%;
+    justify-content: space-between;
+    background-color: #404040;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.input{
+    border-radius: 10rem;
+    height: 2rem;
+    width: 50rem;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 2%;
+}
+
+.button{
+    height: 2rem;
+    width: 20rem;
+    align-self: center;
+    border-radius: 50rem;
+    border: none;
+}
+
+.logo{
+    height: 59rem;
+}
