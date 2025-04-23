@@ -5,14 +5,14 @@ export default function NavBar() {
     <nav>
       <ul className="nav">
         <Image
-          src="/logo_noledge.png"
+          src="/images/logo_noledge.png"
           alt="A ledge"
           className="logo-nav"
           width={100}
           height={100}
         />
         <Image
-            src="/profile.png"
+            src="/images/profile.png"
             alt="Profile"
             className="logo-nav"
             width={100}
@@ -25,7 +25,7 @@ export default function NavBar() {
           <a href="/quiz">Quiz</a>
         </li>
         <li>
-          <a href="/classement">Classement</a>
+          <a href="/scoreboard">Classement</a>
         </li>
         <button className="create-quiz">
           <a href="/create-quiz">Créer un quiz</a>
