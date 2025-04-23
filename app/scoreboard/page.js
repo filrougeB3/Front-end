@@ -1,3 +1,4 @@
+import NavBar from '../asidemenu';
 import styles from '../CSS/scoreboard.module.css';
 
 export default function Scoreboard() {
@@ -5,6 +6,7 @@ export default function Scoreboard() {
 
     return (
         <main className={styles.page}>
+            <NavBar />
             <div className={styles.scoreboardGroup}>
                 <img src="/images/page_logo.png" alt="Logo" width={200} />
                 <div className={styles.scoreboard}>
