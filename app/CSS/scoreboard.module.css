@@ -11,7 +11,7 @@ html{
 
 .page{
     display: flex;
-    background: linear-gradient(90deg, black, blue);
+    background-image: linear-gradient(to right top, #194e9d, #6875b5, #9ea0cd, #d0cee5, #ffffff);
 }
 
 .scoreboard{
@@ -27,7 +27,7 @@ html{
     justify-content: space-between;
     margin-top: 1.5rem;
     padding: 1.5rem;
-    background-color: #D9D9D9;
-    color: black;
+    background-color: grey;
+    color: white;
     border-radius: 5rem;
 }
