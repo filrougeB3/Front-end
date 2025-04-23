@@ -1,4 +1,4 @@
-import NavBar from '../asidemenu';
+import NavBar from '../../components/asidemenu';
 import styles from '../CSS/scoreboard.module.css';
 
 export default function Scoreboard() {

@@ -1,6 +1,6 @@
 import React from "react";
 import "../CSS/globals.css";
-import NavBar from "../asidemenu";
+import NavBar from "../../components/asidemenu";
 import Image from "next/image";
 
 export default function CreateQuiz() {
@@ -10,7 +10,7 @@ export default function CreateQuiz() {
       <div className="content">
         <div className="logo">
           <Image
-            src="/logo_noledge.png"
+            src="/images/logo_noledge.png"
             alt="A ledge"
             width={300}
             height={300}
