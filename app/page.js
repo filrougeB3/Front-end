@@ -1,38 +1,13 @@
 import Image from "next/image";
 import styles from "./CSS/page.module.css";
+import Link from 'next/link';
+import NavBar from "./asidemenu";
+import "../app/CSS/globals.css";
 
 export default function Home() {
   return (
     <div className="container">
-      <nav>
-        <ul className="nav">
-          <Image
-            src="/logo_noledge.png"
-            alt="A ledge"
-            className="logo-nav"
-            width={100}
-            height={100}
-          />
-          <li>
-            <a href="/accueil">Accueil</a>
-          </li>
-          <li>
-            <a href="/quiz">Quiz</a>
-          </li>
-          <li>
-            <a href="/classement">Classement</a>
-          </li>
-          <li>
-            <a href="/connexion">Connexion</a>
-          </li>
-          <li>
-            <a href="/inscription">Inscription</a>
-          </li>
-          <button className="create-quiz">
-            <a>Créer un quiz</a>
-          </button>
-        </ul>
-      </nav>
+      <NavBar />
       <div className="content">
         <div className="logo">
           <Image
