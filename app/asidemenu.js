@@ -11,8 +11,15 @@ export default function NavBar() {
           width={100}
           height={100}
         />
+        <Image
+            src="/profile.png"
+            alt="Profile"
+            className="logo-nav"
+            width={100}
+            height={100}
+          />
         <li>
-          <a href="/accueil">Accueil</a>
+          <a href="/">Accueil</a>
         </li>
         <li>
           <a href="/quiz">Quiz</a>
@@ -21,7 +28,7 @@ export default function NavBar() {
           <a href="/classement">Classement</a>
         </li>
         <button className="create-quiz">
-          <a>Créer un quiz</a>
+          <a href="/create-quiz">Créer un quiz</a>
         </button>
       </ul>
     </nav>
