@@ -8,7 +8,7 @@ export default function Scoreboard() {
         <main className={styles.page}>
             <NavBar />
             <div className={styles.scoreboardGroup}>
-                <img src="/images/page_logo.png" alt="Logo" width={200} />
+                <img src="/images/logo_noledge.png" alt="Logo" width={200} />
                 <div className={styles.scoreboard}>
                     {dataTest.sort((a, b) => {
                         return b.score - a.score;
