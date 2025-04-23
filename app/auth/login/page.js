@@ -15,7 +15,7 @@ export default function Login() {
                 </form>
                 <Link href='/auth/signin'>Pas encore de compte ? S'inscrire</Link>
             </div>
-            <img src="/images/logo.png" alt="Login" className={styles.logo}/>
+            <img src="/images/logo_noledge.png" alt="Login" className={styles.logo}/>
         </main>
     )
 }
