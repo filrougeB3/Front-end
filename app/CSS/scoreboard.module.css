@@ -1,0 +1,33 @@
+.scoreboardGroup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+}
+
+html{
+    overflow: hidden;
+}
+
+.page{
+    display: flex;
+    background-image: linear-gradient(to right top, #194e9d, #6875b5, #9ea0cd, #d0cee5, #ffffff);
+}
+
+.scoreboard{
+    width: 50%;
+    height: 40%;
+    padding: 2%;
+    overflow-y: scroll;
+}
+
+.score{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background-color: grey;
+    color: white;
+    border-radius: 5rem;
+}
