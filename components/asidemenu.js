@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function NavBar() {
   return (
@@ -11,13 +12,16 @@ export default function NavBar() {
           width={100}
           height={100}
         />
-        <Image
+        <Link href="/profil">
+          <Image
             src="/images/profile.png"
             alt="Profile"
             className="logo-nav"
             width={100}
             height={100}
           />
+        </Link>
+
         <li>
           <a href="/">Accueil</a>
         </li>
