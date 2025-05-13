@@ -17,30 +17,32 @@ export default function CreateQuiz() {
           />
         </div>
         <div className="create-quiz-form">
-        <h1>Créer un quiz</h1>
-        <form className="quiz-form">
-          <label htmlFor="quiz-title">Titre du quiz:</label>
-          <input type="text" id="quiz-title" name="quiz-title" required />
+          <h1>Créer un quiz</h1>
+          <form className="quiz-form">
+            <label htmlFor="quiz-title">Titre du quiz:</label>
+            <input type="text" id="quiz-title" name="quiz-title" required />
 
-          <label htmlFor="quiz-description">Description:</label>
-          <textarea
-            id="quiz-description"
-            name="quiz-description"
-            required
-          ></textarea>
+            <label htmlFor="quiz-description">Description:</label>
+            <textarea
+              id="quiz-description"
+              name="quiz-description"
+              required
+            ></textarea>
 
-          <label htmlFor="quiz-category">Catégorie:</label>
-          <select id="quiz-category" name="quiz-category" required>
-            <option value="">Sélectionner une catégorie</option>
-            <option value="sport">Sport</option>
-            <option value="science">Science</option>
-            <option value="cinema">Cinéma</option>
-            <option value="histoire">Histoire</option>
-            <option value="musique">Musique</option>
-          </select>
+            <label htmlFor="quiz-category">Catégorie:</label>
+            <select id="quiz-category" name="quiz-category" required>
+              <option value="">Sélectionner une catégorie</option>
+              <option value="sport">Sport</option>
+              <option value="science">Science</option>
+              <option value="cinema">Cinéma</option>
+              <option value="histoire">Histoire</option>
+              <option value="musique">Musique</option>
+            </select>
 
-          <button type="submit">Créer le quiz</button>
-        </form>
+            <button type="submit">
+                <a href="/create-quiz/create-question">Créer le quiz</a>
+            </button>
+          </form>
         </div>
       </div>
     </div>
