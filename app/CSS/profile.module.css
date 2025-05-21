@@ -87,3 +87,7 @@
     height: 150%;
     justify-content: space-around;
 }
+
+.profilepicture{
+    border-radius: 100%;
+}

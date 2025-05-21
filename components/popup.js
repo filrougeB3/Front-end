@@ -1,26 +1,61 @@
 import { countryCodeRecord } from "@/components/CountryCode";
 import styles from "./components.module.css";
 import React from "react";
+import { getTokenFromLocalStorage } from "@/jwt";
 
-function EditProfile() {
+const token = getTokenFromLocalStorage()
 
-    const [pseudo, setPseudo] = React.useState("JohnDoe")
-    const [email, setEmail] = React.useState("jdoe@mail.com")
-    const [selectedCountry, setCountry] = React.useState("FR")
+function EditProfile({ pseudo, email, userCountry, userPicture, refreshUser, onClose }) {
+
+    const [newPseudo, setPseudo] = React.useState(pseudo)
+    const [newMail, setEmail] = React.useState(email)
+    const [newCountry, setCountry] = React.useState(userCountry)
+    const [newProfilePicture, setProfilePicture] = React.useState(userPicture)
+    
+
+
+    async function updateUser(e) {
+        e.preventDefault();
+        var data
+        try {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+
+                },
+                body: JSON.stringify({
+                    "email": newMail,
+                    "pseudo": newPseudo,
+                    "country": newCountry == "" ? null : newCountry,
+                    "profile_picture_url": newProfilePicture == "" ? null : newProfilePicture,
+                }),
+            });
+            data = await response.json();
+            await refreshUser()
+            onClose()
+        } catch (error) {
+            console.error('Erreur lors de l\'envoi des données à l\'API :', error);
+        }
+    }
 
     return (
         <div className={styles.popup}>
             <h1>Modifier le profil</h1>
-            <form className={styles.form}>
+            <form className={styles.form} onSubmit={updateUser}>
                 <label htmlFor="pseudo">Pseudo</label>
-                <input type="text" id="pseudo" name="pseudo" value={pseudo} onChange={(e) => setPseudo(e.target.value)} className={styles.input} required />
+                <input type="text" id="pseudo" name="pseudo" value={newPseudo} onChange={(e) => setPseudo(e.target.value)} className={styles.input} required />
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className={styles.input} required />
+                <input type="email" id="email" name="email" value={newMail} onChange={(e) => setEmail(e.target.value)} className={styles.input} required />
+                <label htmlFor="profilePicture">Photo de profil</label>
+                <input type="text" id="profilePicture" name="profilePicture" value={newProfilePicture ?? ""} className={styles.input} onChange={(e) => setProfilePicture(e.target.value)} />
                 <label htmlFor="country">Pays</label>
-                <select id="country" name="country" className={styles.input} value={selectedCountry} onChange={(e) => setCountry(e.target.value)} required>
+                <select id="country" name="country" className={styles.input} value={newCountry ?? ""} onChange={(e) => setCountry(e.target.value)}>
+                    <option value="">Aucun pays</option>
                     {Object.keys(countryCodeRecord).map((country, index) => {
                         return (
-                            <option key={index} value={countryCodeRecord[country]}>
+                            <option key={index} value={country}>
                                 {country}
                             </option>
                         )
