@@ -7,14 +7,14 @@ import { CgProfile } from "react-icons/cg";
 import Popup from "reactjs-popup";
 import { DeleteAccount, EditPassword, EditProfile } from "@/components/popup";
 import 'reactjs-popup/dist/index.css';
-import { getDataFromToken, getTokenFromLocalStorage } from "@/jwt";
+import { getTokenFromSessionStorage } from "@/jwt";
 import { useRouter } from "next/navigation";
 import React from "react";
 
 
 export default function Profile() {
 
-    const token = getTokenFromLocalStorage()
+    const token = getTokenFromSessionStorage()
     const router = useRouter()
     const friends = []
     const [user, setUser] = React.useState({
@@ -89,6 +89,7 @@ export default function Profile() {
                     <div>
                         <h2>Paramètres du compte</h2>
                         <div className={styles.settings}>
+                            <button className={styles.delete}>Se déconnecter</button>
                             <Popup trigger={<button className={styles.edit}>Modifier le profil</button>} modal contentStyle={{ width: 'auto', background: 'transparent', border: 'none' }}>
                                 {close => (
                                     <EditProfile

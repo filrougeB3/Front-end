@@ -3,7 +3,7 @@
 import React from 'react';
 import styles from '../../CSS/login.module.css';
 import Link from 'next/link';
-import { saveTokenToLocalStorage } from '@/jwt';
+import { saveTokenToSessionStorage } from '@/jwt';
 import { useRouter } from "next/navigation";
 
 
@@ -30,7 +30,7 @@ export default function Login() {
             });
 
             data = await response.json();
-            saveTokenToLocalStorage(data.auth_token);
+            saveTokenToSessionStorage(data.auth_token);
             router.push('/')
         } catch (error) {
             console.error('Erreur lors de l\'envoi des données à l\'API :', error);

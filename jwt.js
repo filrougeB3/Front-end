@@ -1,14 +1,14 @@
 import jwt from 'jsonwebtoken';
 
-export const saveTokenToLocalStorage = (token) => {
+export const saveTokenToSessionStorage = (token) => {
     sessionStorage.setItem('token', token);
 };
 
-export const getTokenFromLocalStorage = () => {
+export const getTokenFromSessionStorage = () => {
     return sessionStorage.getItem('token');
 };
 
-export const removeTokenFromLocalStorage = () => {
+export const removeTokenFromSessionStorage = () => {
     sessionStorage.removeItem('token');
     location.reload()
 }

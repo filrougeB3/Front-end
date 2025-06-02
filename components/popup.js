@@ -1,9 +1,9 @@
 import { countryCodeRecord } from "@/components/CountryCode";
 import styles from "./components.module.css";
 import React from "react";
-import { getTokenFromLocalStorage } from "@/jwt";
+import { getTokenFromSessionStorage } from "@/jwt";
 
-const token = getTokenFromLocalStorage()
+const token = getTokenFromSessionStorage()
 
 function EditProfile({ pseudo, email, userCountry, userPicture, refreshUser, onClose }) {
 
