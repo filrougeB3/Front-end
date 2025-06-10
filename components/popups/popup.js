@@ -3,7 +3,6 @@ import styles from "./components.module.css";
 import React from "react";
 import { getTokenFromSessionStorage } from "@/jwt";
 
-const token = getTokenFromSessionStorage()
 
 function EditProfile({ pseudo, email, userCountry, userPicture, refreshUser, onClose }) {
 
@@ -11,9 +10,8 @@ function EditProfile({ pseudo, email, userCountry, userPicture, refreshUser, onC
     const [newMail, setEmail] = React.useState(email)
     const [newCountry, setCountry] = React.useState(userCountry)
     const [newProfilePicture, setProfilePicture] = React.useState(userPicture)
+    const token = getTokenFromSessionStorage()
     
-
-
     async function updateUser(e) {
         e.preventDefault();
         var data
