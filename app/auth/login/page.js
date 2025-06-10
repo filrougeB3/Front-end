@@ -12,7 +12,15 @@ export default function Login() {
     const [mail, setMail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const router = useRouter()
-    
+
+    const crypto = require('crypto')
+
+    function hashPassword(password) {
+        const hash = crypto.createHash('sha256');
+        hash.update(password);
+        return hash.digest('hex');
+    }
+
 
     async function login(e) {
         e.preventDefault();
@@ -25,7 +33,7 @@ export default function Login() {
                 },
                 body: JSON.stringify({
                     "email": mail,
-                    "password": password
+                    "password": hashPassword(password),
                 }),
             });
 
