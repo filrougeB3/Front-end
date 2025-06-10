@@ -73,23 +73,30 @@ a {
 
 .quiz-list {
   display: flex;
-  gap: 5%;
+  gap: 3rem;
+  max-width: 90%;
+  overflow-x: auto;
+  padding-bottom: 1%;
 }
 
 .category-list {
   display: flex;
-  gap: 5%;
+  max-width: 90%;
+  gap: 3rem;
+  overflow-x: auto;
+  padding-bottom: 1%;
 }
 
 .quiz-item, .category-item {
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #194E9D;
-  border-radius: 25px;
-  width: 200px;
-  height: 175px;
+  border-radius: 1rem;
+  width: 10rem;
+  height: 10rem;
   color: white;
 }
 
