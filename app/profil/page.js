@@ -63,7 +63,7 @@ export default function Profile() {
                 <div className={styles.profile}>
                     <div className={styles.user}>
                         {user.profile_picture_url == null ?
-                            <CgProfile size={100} color="#000" />
+                            <CgProfile size={100} color="#D9D9D9" className={styles.profilepicture}/>
                             :
                             <img src={user.profile_picture_url} className={styles.profilepicture} width={100} height={100} />
                         }
