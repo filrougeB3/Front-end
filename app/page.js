@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from 'next/link';
-import NavBar from "../components/asidemenu";
+import NavBar from "../components/navbar/asidemenu";
 import "../app/CSS/globals.css";
 import React from "react";
 
@@ -30,12 +30,13 @@ export default function Home() {
     getQuiz()
   }, [])
 
-  const fakeCategories = [
+  const categories = [
     "Sport",
     "Science",
     "Cinéma",
     "Histoire",
     "Musique",
+    "Géographie"
   ];
   return (
     <div className="container">
@@ -57,18 +58,16 @@ export default function Home() {
                 <Link href={`/quiz/${quiz.id}`}>
                   <h3>{quiz.title}</h3>
                 </Link>
-                <p>Créé par {quiz.author}</p>
+                <p>Créé par {quiz.pseudo}</p>
               </div>
             ))}
           </div>
           <h2>Catégories</h2>
           <div className="category-list">
-            {fakeCategories.map((category, index) => (
-              <div key={index} className="category-item">
-                <Link href={`/categories/${category}`}>
-                  <h3>{category}</h3>
-                </Link>
-              </div>
+            {categories.map((category, index) => (
+              <Link href={`/categories?category=${category}`} key={index} className="category-item">
+                <h3>{category}</h3>
+              </Link>
             ))}
           </div>
         </div>
