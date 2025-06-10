@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import Link from 'next/link';
-import NavBar from "../components/navbar/asidemenu";
-import "../app/CSS/globals.css";
+import NavBar from "@/components/navbar/asidemenu";
+import "@/app/CSS/globals.css";
 import React from "react";
+import { useSearchParams } from "next/navigation";
 
-export default function Home() {
+export default function CategoriesList() {
 
+  const category = useSearchParams().get('category');
+  console.log(category);
   const [quizzes, setQuizzes] = React.useState([]);
 
   async function getQuiz() {
@@ -19,7 +22,11 @@ export default function Home() {
         }
       })
       const data = await response.json();
-      setQuizzes(data)
+      for (const quiz of data) {
+        if (quiz.themes == category) {
+          setQuizzes(quizzes => [...quizzes, quiz]);
+        }
+      }
     }
     catch (error) {
       console.error('Erreur lors de la récupération des données de l\'API :', error);
@@ -30,14 +37,6 @@ export default function Home() {
     getQuiz()
   }, [])
 
-  const categories = [
-    "Sport",
-    "Science",
-    "Cinéma",
-    "Histoire",
-    "Musique",
-    "Géographie"
-  ];
   return (
     <div className="container">
       <NavBar />
@@ -51,7 +50,7 @@ export default function Home() {
           />
         </div>
         <div className="popular-quiz">
-          <h2>Quiz populaires</h2>
+          <h2>Quiz {category}</h2>
           <div className="quiz-list">
             {quizzes.map((quiz) => (
               <div key={quiz.id} className="quiz-item">
@@ -60,14 +59,6 @@ export default function Home() {
                 </Link>
                 <p>Créé par {quiz.pseudo}</p>
               </div>
-            ))}
-          </div>
-          <h2>Catégories</h2>
-          <div className="category-list">
-            {categories.map((category, index) => (
-              <Link href={`/categories?category=${category}`} key={index} className="category-item">
-                <h3>{category}</h3>
-              </Link>
             ))}
           </div>
         </div>
