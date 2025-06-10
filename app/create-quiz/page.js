@@ -70,10 +70,10 @@ export default function CreateQuiz() {
         <div className="create-quiz-form">
           <h1>Créer un quiz</h1>
           <form className="quiz-form" onSubmit={sendData}>
-            <label htmlFor="quiz-title">Titre du quiz:</label>
+            <label htmlFor="quiz-title" className="label">Titre du quiz:</label>
             <input type="text" id="quiz-title" name="quiz-title" onChange={(e) => setTitle(e.target.value)} required />
 
-            <label htmlFor="quiz-description">Description:</label>
+            <label htmlFor="quiz-description" className="label">Description:</label>
             <textarea
               id="quiz-description"
               name="quiz-description"
@@ -81,7 +81,7 @@ export default function CreateQuiz() {
               required
             ></textarea>
 
-            <label htmlFor="quiz-category">Catégorie:</label>
+            <label htmlFor="quiz-category" className="label">Catégorie:</label>
             <select id="quiz-category" name="quiz-category" onChange={(e) => setCategory(e.target.value)} required>
               <option value="">Sélectionner une catégorie</option>
               <option value="Sport">Sport</option>

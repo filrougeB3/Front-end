@@ -54,12 +54,10 @@ export default function Home() {
           <h2>Quiz populaires</h2>
           <div className="quiz-list">
             {quizzes.map((quiz) => (
-              <div key={quiz.id} className="quiz-item">
-                <Link href={`/quiz/${quiz.id}`}>
+              <Link href={`/quiz/${quiz.id}`} key={quiz.id} className="quiz-item">
                   <h3>{quiz.title}</h3>
-                </Link>
                 <p>Créé par {quiz.pseudo}</p>
-              </div>
+              </Link>
             ))}
           </div>
           <h2>Catégories</h2>
