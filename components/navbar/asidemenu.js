@@ -26,9 +26,6 @@ export default function NavBar() {
           <a href="/">Accueil</a>
         </li>
         <li>
-          <a href="/quiz">Quiz</a>
-        </li>
-        <li>
           <a href="/scoreboard">Classement</a>
         </li>
         <button className="create-quiz">
