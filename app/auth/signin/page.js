@@ -16,6 +16,14 @@ export default function Signin() {
     const [confirmPassword, setConfirmPassword] = React.useState("");
     const router = useRouter()
 
+    const crypto = require('crypto')
+
+    function hashPassword(password) {
+        const hash = crypto.createHash('sha256');
+        hash.update(password);
+        return hash.digest('hex');
+    }
+
 
     async function signin(e) {
         e.preventDefault();
@@ -33,7 +41,7 @@ export default function Signin() {
                 body: JSON.stringify({
                     "pseudo": pseudo,
                     "email": mail,
-                    "password": password
+                    "password": hashPassword(password),
                 }),
             });
 
@@ -46,7 +54,7 @@ export default function Signin() {
     }
 
 
-    
+
     return (
         <main className={styles.login}>
             <div className={styles.text}>
